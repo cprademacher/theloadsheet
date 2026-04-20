@@ -378,6 +378,27 @@ section { padding: 72px 0; }
   color: var(--gold);
   line-height: 1.5;
 }
+.sample-tag {
+  display: block;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.inside-disclaimer {
+  margin-top: 16px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--faint);
+  text-align: center;
+  padding: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
 
 /* ── SAMPLE PREVIEW ── */
 .preview-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -956,33 +977,49 @@ footer {
         <span class="inside-num">01</span>
         <h3>The One Number That Matters</h3>
         <p>The single most important market signal this week, translated into dollar impact for your fleet size. Not industry commentary — actual math.</p>
-        <div class="inside-example">This week: Diesel $5.61/gal → 10 trucks → $33,800 more/month vs. last April</div>
+        <div class="inside-example">
+          <span class="sample-tag">Sample · Issue #1</span>
+          Diesel $5.61/gal → 10 trucks → $33,800 more/month vs. last April
+        </div>
       </div>
       <div class="inside-card">
         <span class="inside-num">02</span>
         <h3>Southeast Lane Intel</h3>
         <p>Lane-by-lane rates on the corridors you actually run: Atlanta, Savannah, Charlotte, Memphis, Nashville. Rate, direction, and a one-line verdict.</p>
-        <div class="inside-example">ATL → NYC: $3.42/mi ▲11% · RUN IT · Outbound FL: soft · AVOID</div>
+        <div class="inside-example">
+          <span class="sample-tag">Sample · Issue #1</span>
+          ATL → NYC: $3.42/mi ▲11% · RUN IT · Outbound FL: soft · AVOID
+        </div>
       </div>
       <div class="inside-card">
         <span class="inside-num">03</span>
         <h3>Regulatory Watch</h3>
         <p>Southeast-specific compliance alerts before they become violations. FMCSA updates, inspection blitz dates, ELD changes — flagged by urgency level.</p>
-        <div class="inside-example">ACTION NOW: CVSA Roadcheck May 12–14 · ELD + securement focus</div>
+        <div class="inside-example">
+          <span class="sample-tag">Sample · Issue #1</span>
+          ACTION NOW: CVSA Roadcheck May 12–14 · ELD + securement focus
+        </div>
       </div>
       <div class="inside-card">
         <span class="inside-num">04</span>
         <h3>The Ops Minute</h3>
         <p>One practical business tip per issue. Fuel surcharge math, factoring red flags, broker payment terms, insurance renewal traps. The section readers forward most.</p>
-        <div class="inside-example">This week: Port of Savannah → Atlanta feeder lanes and how to string loads</div>
+        <div class="inside-example">
+          <span class="sample-tag">Sample · Issue #1</span>
+          Port of Savannah → Atlanta feeder lanes and how to string loads
+        </div>
       </div>
       <div class="inside-card">
         <span class="inside-num">05</span>
         <h3>One Thing I'm Watching</h3>
         <p>A forward signal that hasn't become a story yet. Early market shifts, regulatory trends building in the pipeline, seasonal patterns before they hit rates.</p>
-        <div class="inside-example">Southeast capacity tightening faster than any other region — price contracts accordingly now</div>
+        <div class="inside-example">
+          <span class="sample-tag">Sample · Issue #1</span>
+          Southeast capacity tightening faster than any other region — price contracts accordingly now
+        </div>
       </div>
     </div>
+    <p class="inside-disclaimer">Examples above are from Issue #1 (April 2026) to illustrate the format. Subscribers receive current data every Monday at 6am.</p>
   </div>
 </section>
 
@@ -1048,7 +1085,7 @@ footer {
         </div>
       </div>
       <div class="preview-cta-bar" id="sample-signup">
-        <span class="preview-cta-text">Sample shown above — full issue delivered by email</span>
+        <span class="preview-cta-text">Sample data from Issue #1 (Apr 2026) — subscribers get current data every Monday</span>
         <form style="display:flex;gap:0;" onsubmit="handleSampleRequest(event)">
           <input type="email" id="sample-email" placeholder="your@email.com" required style="background:var(--surface3);border:1px solid var(--border2);border-right:none;padding:8px 12px;font-family:'Source Code Pro',monospace;font-size:11px;color:var(--text);outline:none;width:200px;">
           <button type="submit" id="sample-btn" style="background:var(--accent);border:none;color:#fff;padding:8px 14px;font-family:'Source Code Pro',monospace;font-size:10px;letter-spacing:1px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Send Me Issue #1 →</button>
@@ -1245,7 +1282,7 @@ footer {
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">Monthly subscribers can cancel anytime with no penalty. The 6-month Solo plan is a 6-month commitment paid upfront — you save $60 in exchange for that commitment. Fleet Pass is month-to-month. All cancellations are handled directly through your account, no phone calls required.</div>
+          <div class="faq-a-inner">Solo subscribers can cancel anytime with no penalty. The 6-month Solo plan is a 6-month commitment paid upfront — you save $60 in exchange for that commitment. Fleet Pass is month-to-month. All cancellations are handled directly through your account, no phone calls required.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1269,7 +1306,7 @@ footer {
     <div style="position:relative;">
       <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="btn-primary" style="font-size:13px;padding:16px 36px;letter-spacing:2px;">Subscribe Now — From $89/month →</a>
     </div>
-    <p class="form-note">Solo from $89/month · Fleet Pass $149/month · Cancel Monthly anytime</p>
+    <p class="form-note">Solo from $89/month · Fleet Pass $149/month · Cancel Solo anytime</p>
   </div>
 </div>
 
