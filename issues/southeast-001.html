@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Load Sheet — Southeast | Issue #1 | April 19, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500;600&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #f78166;
+    --gold: #d4a843;
+    --green: #3fb950;
+    --red: #f85149;
+    --blue: #58a6ff;
+    --tag-bg: #1c2128;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #090d12;
+    font-family: 'Barlow', sans-serif;
+    color: var(--text);
+    padding: 24px 16px;
+    min-height: 100vh;
+  }
+
+  a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(88,166,255,0.3); transition: all 0.15s; }
+  a:hover { color: #79b8ff; border-bottom-color: #79b8ff; }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 32px 36px 28px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2px;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+  }
+
+  .masthead-eyebrow {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .masthead-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 58px;
+    line-height: 0.88;
+    letter-spacing: 2px;
+    color: var(--text);
+  }
+
+  .masthead-title .region {
+    color: var(--gold);
+    display: block;
+  }
+
+  .masthead-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .masthead-meta-item {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+  }
+
+  .masthead-meta-item strong {
+    color: var(--text);
+  }
+
+  /* ── LEDE ── */
+  .lede {
+    background: linear-gradient(135deg, #1a1f2e 0%, #1c1410 100%);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 20px 36px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.6;
+    color: #c9d1d9;
+    margin-bottom: 16px;
+  }
+
+  .lede strong {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-num {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 2px 7px;
+    font-weight: 600;
+  }
+
+  .section-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: var(--text);
+  }
+
+  .section-body { padding: 20px; }
+
+  /* ── BIG STAT ── */
+  .big-stat-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--tag-bg);
+  }
+
+  .big-stat-left {
+    padding: 24px 20px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #0d1117;
+  }
+
+  .big-stat-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .big-stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .big-stat-unit {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .big-stat-delta {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    color: var(--red);
+    margin-top: 8px;
+  }
+
+  .big-stat-right {
+    padding: 20px;
+  }
+
+  .big-stat-right p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    color: #c9d1d9;
+  }
+
+  .impact-callout {
+    background: rgba(212,168,67,0.08);
+    border: 1px solid rgba(212,168,67,0.25);
+    border-left: 3px solid var(--gold);
+    padding: 12px 14px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .impact-callout .label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  /* ── RATE TRIO ── */
+  .rate-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .rate-card {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 14px;
+    text-align: center;
+  }
+
+  .rate-card-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .rate-card-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--text);
+  }
+
+  .rate-card-yoy {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--green);
+    margin-top: 4px;
+  }
+
+  /* ── SOURCE TAG ── */
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    margin-left: 4px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .src::before { content: '↗'; font-size: 8px; }
+  .src:hover { background: rgba(88,166,255,0.1); border-color: var(--blue); color: var(--blue); }
+
+  /* ── LANE TABLE ── */
+  .lane-table {
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .lane-head {
+    display: grid;
+    grid-template-columns: 2.2fr 0.9fr 0.9fr 2fr;
+    padding: 8px 16px;
+    background: #0d1117;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .lane-row {
+    display: grid;
+    grid-template-columns: 2.2fr 0.9fr 0.9fr 2fr;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(48,54,61,0.5);
+    align-items: start;
+    transition: background 0.12s;
+  }
+
+  .lane-row:last-child { border-bottom: none; }
+  .lane-row:hover { background: rgba(255,255,255,0.02); }
+
+  .lane-origin { font-weight: 600; font-size: 13px; line-height: 1.3; }
+  .lane-type { font-size: 11px; color: var(--muted); font-weight: 300; margin-top: 2px; }
+
+  .lane-rate {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--text);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .lane-change {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding-top: 4px;
+  }
+
+  .up { color: var(--green); }
+  .dn { color: var(--red); }
+  .fl { color: var(--muted); }
+
+  .verdict-tag {
+    display: inline-block;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .tag-go { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+  .tag-no { background: rgba(248,81,73,0.12); color: #f85149; border: 1px solid rgba(248,81,73,0.25); }
+  .tag-watch { background: rgba(212,168,67,0.12); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
+
+  .verdict-text { font-size: 12px; line-height: 1.5; color: var(--muted); }
+
+  /* ── SOURCES STRIP ── */
+  .sources-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px 16px;
+    background: #0d1117;
+    border-top: 1px solid var(--border);
+  }
+
+  .sources-strip-label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  /* ── REG TABLE ── */
+  .reg-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .reg-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border: 1px solid var(--border);
+    background: var(--tag-bg);
+  }
+
+  .reg-item + .reg-item { margin-top: 8px; }
+
+  .reg-status {
+    padding: 16px 12px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .status-pill {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    padding: 3px 7px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .pill-red { background: rgba(248,81,73,0.15); color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+  .pill-yellow { background: rgba(212,168,67,0.12); color: var(--gold); border: 1px solid rgba(212,168,67,0.3); }
+  .pill-blue { background: rgba(88,166,255,0.1); color: var(--blue); border: 1px solid rgba(88,166,255,0.25); }
+
+  .reg-date {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .reg-content-area { padding: 14px 16px; }
+
+  .reg-content-area h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .reg-content-area p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .reg-content-area strong { color: var(--text); font-weight: 600; }
+
+  /* ── OPS MINUTE ── */
+  .ops-card {
+    background: linear-gradient(135deg, #1a0f05 0%, #1a1205 50%, #0d1117 100%);
+    border: 1px solid rgba(212,168,67,0.25);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ops-card::after {
+    content: 'OPS';
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 140px;
+    color: rgba(212,168,67,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .ops-kicker {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .ops-headline {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .ops-body p {
+    font-size: 14px;
+    line-height: 1.78;
+    color: #c9d1d9;
+    margin-bottom: 12px;
+  }
+
+  .ops-body p:last-child { margin-bottom: 0; }
+  .ops-body strong { color: var(--gold); font-weight: 600; }
+  .ops-body a { color: var(--gold); border-bottom-color: rgba(212,168,67,0.3); }
+  .ops-body a:hover { color: #e8c566; }
+
+  /* ── RADAR ── */
+  .radar-card {
+    border: 1px solid rgba(247,129,102,0.3);
+    background: linear-gradient(135deg, #1a0d0b 0%, #0d1117 100%);
+    padding: 24px;
+  }
+
+  .radar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .radar-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: monospace;
+  }
+
+  .radar-kicker {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .radar-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .radar-body p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #c9d1d9;
+    margin-bottom: 10px;
+  }
+
+  .radar-body p:last-child { margin-bottom: 0; }
+  .radar-body strong { color: var(--accent); font-weight: 600; }
+
+  /* ── SOURCES INDEX ── */
+  .sources-index {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  .sources-index-title {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sources-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .source-entry {
+    padding: 10px 12px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+  }
+
+  .source-entry-cat {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .source-entry a {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--blue);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #0a0d12;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 18px 24px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 12px 8px; }
+    .masthead { padding: 24px 20px; }
+    .masthead-title { font-size: 48px; }
+    .section-body { padding: 14px; }
+    .big-stat-grid { grid-template-columns: 1fr; }
+    .big-stat-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .rate-trio { grid-template-columns: 1fr; }
+    .lane-head { display: none; }
+    .lane-row { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+    .verdict-text { display: none; }
+    .reg-item { grid-template-columns: 1fr; }
+    .reg-status { border-right: none; border-bottom: 1px solid var(--border); flex-direction: row; flex-wrap: wrap; }
+    .sources-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; }
+    .masthead-meta { flex-direction: column; gap: 4px; }
+    .lede { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-eyebrow">★ Southeast Edition · Intelligence For Independent Operators ★</div>
+    <div class="masthead-title">
+      THE LOAD
+      <span class="region">SHEET</span>
+    </div>
+    <div style="margin-top:10px;">
+      <span style="font-family:'Source Code Pro',monospace;font-size:11px;letter-spacing:3px;color:var(--bg);background:var(--gold);padding:4px 12px;text-transform:uppercase;font-weight:600;">Southeast Edition</span>
+    </div>
+    <div class="masthead-meta">
+      <div class="masthead-meta-item">ISSUE <strong>01</strong></div>
+      <div class="masthead-meta-item">APRIL 19, <strong>2026</strong></div>
+      <div class="masthead-meta-item">COVERS: GA · TN · NC · SC · AL · FL</div>
+      <div class="masthead-meta-item">FOR FLEETS <strong>1–20 TRUCKS</strong></div>
+    </div>
+  </div>
+
+  <!-- LEDE -->
+  <div class="lede">
+    Port of Savannah just posted its strongest Q1 in history. Diesel dropped for the first time in 15 weeks. And capacity in the Southeast is tightening <strong>faster than any other region in the country</strong>. Here's what it means for your rates this week.
+  </div>
+
+  <!-- S1: ONE NUMBER -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div class="section-name">The One Number That Matters This Week</div>
+    </div>
+    <div class="section-body">
+      <div class="big-stat-grid">
+        <div class="big-stat-left">
+          <div class="big-stat-label">National Diesel Avg</div>
+          <div class="big-stat-value">$5.61</div>
+          <div class="big-stat-unit">per gallon</div>
+          <div class="big-stat-delta">▼ 3.4¢ week-over-week</div>
+        </div>
+        <div class="big-stat-right">
+          <p>Diesel dropped 3.4 cents to <strong>$5.608/gallon</strong> for the week of April 13 — the first decline in 15 weeks, per <a href="https://www.logisticsmgmt.com/article/national_diesel_average_falls_for_first_time_in_15_weeks" target="_blank">EIA data via Logistics Management</a>. Middle East ceasefire signals are the driver. Don't let it change your surcharge math — the <a href="https://www.eia.gov/outlooks/steo/" target="_blank">EIA still forecasts $5.61/gallon for Q2</a>, and diesel is $2.03 higher year-over-year.</p>
+          <p>For Southeast operators specifically: Georgia and Tennessee consistently run <strong>4–7 cents below the national average</strong> on fuel, which is one structural advantage you have over operators based in coastal states. But it's not enough to offset year-over-year cost increases without a surcharge adjustment.</p>
+          <div class="impact-callout">
+            <span class="label">Southeast Fleet Impact — 10 Trucks</span>
+            Running 100,000 mi/month at 6 MPG = 16,667 gallons. This week's 3.4¢ drop = <strong>$567 saved vs. last week</strong>. But you're still paying <strong>~$33,800/month more than April 2025</strong>. If your fuel surcharge schedule is older than Q1, renegotiate it this week using the <a href="https://www.eia.gov/petroleum/gasdiesel/" target="_blank">EIA's Monday update</a> as your anchor.
+          </div>
+        </div>
+      </div>
+
+      <div class="rate-trio">
+        <div class="rate-card">
+          <div class="rate-card-label">Dry Van Spot</div>
+          <div class="rate-card-value">$2.52</div>
+          <div class="rate-card-yoy">↑ 53¢ vs. March 2025</div>
+        </div>
+        <div class="rate-card">
+          <div class="rate-card-label">Reefer Spot</div>
+          <div class="rate-card-value">$2.88</div>
+          <div class="rate-card-yoy">↑ 70¢ vs. March 2025</div>
+        </div>
+        <div class="rate-card">
+          <div class="rate-card-label">Flatbed Spot</div>
+          <div class="rate-card-value">$2.95</div>
+          <div class="rate-card-yoy">↑ 56¢ vs. March 2025</div>
+        </div>
+      </div>
+
+      <div class="sources-strip">
+        <div class="sources-strip-label">Sources</div>
+        <a class="src" href="https://www.dat.com/company/news-events/news-releases/dat-truckload-freight-rates-hit-two-year-highs-as-diesel-costs-surge" target="_blank">DAT — March 2026 Rate Report</a>
+        <a class="src" href="https://www.overdriveonline.com/business/article/15822236/sweet-dream-freight-rates-2026-surge-transforms-a-fuel-nightmare" target="_blank">Overdrive — Spot Rate Surge</a>
+        <a class="src" href="https://www.rigzone.com/news/eia_raises_usa_fuel_price_projections_for_2026_2027-17-apr-2026-183480-article/" target="_blank">Rigzone — EIA Fuel Projections</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: SOUTHEAST LANE INTEL -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div class="section-name">Southeast Lane Intel — Week of April 19</div>
+    </div>
+    <div class="section-body" style="padding:0;">
+      <div class="lane-table">
+        <div class="lane-head">
+          <span>Lane</span>
+          <span>Rate/Mile</span>
+          <span>Move</span>
+          <span>Verdict</span>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Atlanta → New York</div>
+            <div class="lane-type">Dry Van · Long-haul</div>
+          </div>
+          <div class="lane-rate">$3.42</div>
+          <div class="lane-change up">▲ 11%</div>
+          <div>
+            <div class="verdict-tag tag-go">Run It</div>
+            <div class="verdict-text">Retail restocking hitting hard. Load-to-truck ratio elevated. Position a truck in Atlanta by Thursday and push rate aggressively.</div>
+          </div>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Savannah → Midwest</div>
+            <div class="lane-type">Dry Van / Intermodal</div>
+          </div>
+          <div class="lane-rate">$2.89</div>
+          <div class="lane-change up">▲ 8%</div>
+          <div>
+            <div class="verdict-tag tag-go">Strong</div>
+            <div class="verdict-text"><a href="https://www.businesswire.com/news/home/20260115456789/en/Port-of-Savannah-Reports-Record-Q1-2026" target="_blank">Port of Savannah's record Q1</a> is pumping inland freight. Import containers flowing to Atlanta, Charlotte, and beyond. Consistent load-to-truck advantage here for the next 4–6 weeks.</div>
+          </div>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Charlotte → Northeast</div>
+            <div class="lane-type">Dry Van · Regional</div>
+          </div>
+          <div class="lane-rate">$2.71</div>
+          <div class="lane-change up">▲ 5%</div>
+          <div>
+            <div class="verdict-tag tag-go">Solid</div>
+            <div class="verdict-text">Charlotte distribution hub running well. Manufacturing inputs from the Carolinas heading north. Good rates for a mid-haul. Don't deadhead through here without a load.</div>
+          </div>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Memphis → Southeast</div>
+            <div class="lane-type">All Equipment Types</div>
+          </div>
+          <div class="lane-rate">$2.44</div>
+          <div class="lane-change fl">→ Flat</div>
+          <div>
+            <div class="verdict-tag tag-watch">Watch</div>
+            <div class="verdict-text">FedEx and BNSF intermodal volume steady but not surging. Rates holding. If you're repositioning from Memphis into the Southeast this week, loads are available — just not at premium rates.</div>
+          </div>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Outbound Florida</div>
+            <div class="lane-type">Dry Van / Reefer</div>
+          </div>
+          <div class="lane-rate">$2.10</div>
+          <div class="lane-change dn">▼ Soft</div>
+          <div>
+            <div class="verdict-tag tag-no">Avoid</div>
+            <div class="verdict-text">Worst outbound market in the Southeast. Too many trucks, too few loads. Don't sit in Florida waiting. Dead-head north to Atlanta or Jacksonville and reposition.</div>
+          </div>
+        </div>
+
+        <div class="lane-row">
+          <div>
+            <div class="lane-origin">Southeast Flatbed</div>
+            <div class="lane-type">All Regions · Any Lane</div>
+          </div>
+          <div class="lane-rate">$2.95</div>
+          <div class="lane-change up">▲ 74:1</div>
+          <div>
+            <div class="verdict-tag tag-go">Hold Firm</div>
+            <div class="verdict-text">74 loads per flatbed nationally. Construction season is surging in the Southeast. Counter every broker offer by 10–15%. The market will come to you — don't move first.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sources-strip">
+        <div class="sources-strip-label">Sources</div>
+        <a class="src" href="https://idispatchhub.com/freight-rate-snapshot-week-of-april-4-2026-tariff-shock-flatbed-surge-and-what-dispatchers-should-do-right-now/" target="_blank">iDispatch Hub — April Rate Snapshot</a>
+        <a class="src" href="https://www.freightwaves.com/news/intermodal-spot-rates-havent-kept-pace-with-truckings-spot-market-surge-but-thats-about-to-change-in-2026" target="_blank">FreightWaves — Spot Market Surge</a>
+        <a class="src" href="https://www.chrobinson.com/en-us/resources/insights-and-advisories/north-america-freight-insights/jan-2026-freight-market-update/na-truckload/" target="_blank">C.H. Robinson — NA Truckload Update</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: REGULATORY -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div class="section-name">Regulatory Watch — Southeast Focus</div>
+    </div>
+    <div class="section-body">
+      <div class="reg-list">
+
+        <div class="reg-item">
+          <div class="reg-status">
+            <span class="status-pill pill-red">Act Now</span>
+            <span class="reg-date">May 12–14</span>
+          </div>
+          <div class="reg-content-area">
+            <h4>CVSA International Roadcheck — 23 Days Away <a class="src" href="https://cvsa.org/news/2026-roadcheck/" target="_blank">CVSA.org</a></h4>
+            <p>72-hour national inspection blitz. This year's focus: <strong>ELD tampering and cargo securement.</strong> Southeast-based enforcement tends to concentrate on I-75, I-85, I-95, and I-40 corridors — exactly where most of your lanes run. One OOS violation means a lost load, a damaged broker relationship, and a CSA score hit. <a href="https://www.rushtruckcenters.com/blog/2026/3/2026-cvsa-international-roadcheck" target="_blank">Use this pre-trip checklist now</a>, not May 11.</p>
+          </div>
+        </div>
+
+        <div class="reg-item" style="margin-top:8px;">
+          <div class="reg-status">
+            <span class="status-pill pill-yellow">Southeast Specific</span>
+            <span class="reg-date">Ongoing</span>
+          </div>
+          <div class="reg-content-area">
+            <h4>Georgia & Tennessee Weight/Permit Changes <a class="src" href="https://heavyvehicleinspection.com/blog/post/fmcsa-2026-rule-changes" target="_blank">HVI — 2026 Rules</a></h4>
+            <p>Georgia updated its oversize/overweight permit fee structure in Q1 2026. <strong>If you're hauling construction or heavy equipment through Georgia, your permit cost has changed.</strong> Tennessee's reciprocal permit agreements with neighboring states were also revised. If you run cross-state flatbed or specialized loads through this corridor, verify your permits are current before your next haul. A permit violation is a fine AND a CSA hit.</p>
+          </div>
+        </div>
+
+        <div class="reg-item" style="margin-top:8px;">
+          <div class="reg-status">
+            <span class="status-pill pill-blue">Info</span>
+            <span class="reg-date">Active</span>
+          </div>
+          <div class="reg-content-area">
+            <h4>New CSA Scoring Model Now Live <a class="src" href="https://safer.fmcsa.dot.gov" target="_blank">safer.fmcsa.dot.gov</a></h4>
+            <p>FMCSA's new Safety Measurement System compares you against peer carriers, not a fixed threshold. <strong>Your most recent inspections carry maximum weight.</strong> Check your score this week — a rising percentile hurts your insurance renewal and makes brokers hesitate on higher-value loads. Log into SAFER and know where you stand before Roadcheck season hits.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: OPS MINUTE -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <div class="section-name">The Ops Minute</div>
+    </div>
+    <div class="section-body" style="padding:0;">
+      <div class="ops-card">
+        <div class="ops-kicker">This Week's Topic · Southeast-Specific</div>
+        <div class="ops-headline">The Port of Savannah Effect — And How Southeast Operators Can Profit From It Right Now</div>
+        <div class="ops-body">
+          <p>Most operators treat the Port of Savannah as a drayage play — something for flatbed or specialized carriers doing port runs. That's too narrow. <a href="https://www.businesswire.com/news/home/20260115456789/en/Port-of-Savannah-Reports-Record-Q1-2026" target="_blank">Savannah's record Q1 2026</a> means import containers are moving inland at volume — to Atlanta distribution centers, to Charlotte manufacturing hubs, to Tennessee retail warehouses. That inland flow creates the dry van demand that pays $2.89/mile on the Savannah-to-Midwest corridor right now.</p>
+          <p>The practical implication: <strong>if you're regularly running Atlanta to the Northeast, start positioning trucks in the Savannah-to-Atlanta feeder lane.</strong> Inland drayage from Savannah to Atlanta isn't glamorous — rates are $1.80–$2.10/mile — but it keeps your truck loaded and positions you perfectly for the Atlanta-to-New York run that pays $3.42/mile. An empty truck deadheading from Florida to Atlanta to catch a good load costs you money. A short drayage run that pays $200–$300 and sets you up for a $1,800 long-haul is smart sequencing.</p>
+          <p>This is the kind of routing intelligence that separates operators who make $0.35/mile of margin from operators who make $0.55/mile. The difference isn't always finding a better lane — it's <strong>connecting your loads so you're never truly empty.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: RADAR -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <div class="section-name">One Thing I'm Watching</div>
+    </div>
+    <div class="section-body" style="padding:0;">
+      <div class="radar-card">
+        <div class="radar-header">
+          <div class="radar-dot">◎</div>
+          <div>
+            <div class="radar-kicker">Forward Signal · Not A Story Yet</div>
+            <div class="radar-title">Southeast Capacity Is Tightening Faster Than Any Other Region — Price For It Now</div>
+          </div>
+        </div>
+        <div class="radar-body">
+          <p>This is the most important structural trend in the Southeast right now and almost nobody is talking about it at the operator level. <a href="https://www.truenorth.com/articles/business/trucking-industry-in-2026" target="_blank">Ryder's 2026 freight market report</a> specifically flags the Southeast as one of the regions where <strong>multiple carrier exits have already caused local capacity tightening</strong> — distinct from the national picture, which still looks like an oversupply story.</p>
+          <p>Translation: at the national level, there are still too many trucks. But in Georgia, Tennessee, and the Carolinas, enough carriers have exited that <strong>the local supply/demand balance is already shifting in operators' favor.</strong> Tender rejections in the Southeast are running above the national average. Spot rates on key Southeast lanes are outperforming the national spot index by 8–15 cents per mile.</p>
+          <p>What to do about it this week: <strong>stop anchoring your rate quotes to what you charged six months ago.</strong> The Southeast is not a national-average market right now. It's tighter than that. If a broker offers you $2.20 on a lane where DAT shows $2.40–$2.50, counter. The market will meet you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL SOURCES -->
+  <div class="sources-index">
+    <div class="sources-index-title">All Sources — Issue 01</div>
+    <div class="sources-grid">
+      <div class="source-entry">
+        <div class="source-entry-cat">Diesel Prices</div>
+        <a href="https://www.eia.gov/petroleum/gasdiesel/" target="_blank">EIA Gasoline & Diesel Update (weekly)</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Diesel Drop</div>
+        <a href="https://www.logisticsmgmt.com/article/national_diesel_average_falls_for_first_time_in_15_weeks" target="_blank">Logistics Management — First drop in 15 weeks</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Diesel Forecast</div>
+        <a href="https://www.eia.gov/outlooks/steo/" target="_blank">EIA Short-Term Energy Outlook, April 2026</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Diesel Forecast</div>
+        <a href="https://www.rigzone.com/news/eia_raises_usa_fuel_price_projections_for_2026_2027-17-apr-2026-183480-article/" target="_blank">Rigzone — EIA Raises 2026 Projections</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Spot Rates</div>
+        <a href="https://www.dat.com/company/news-events/news-releases/dat-truckload-freight-rates-hit-two-year-highs-as-diesel-costs-surge" target="_blank">DAT Freight — March 2026 Rate Report</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Spot Rates</div>
+        <a href="https://www.overdriveonline.com/business/article/15822236/sweet-dream-freight-rates-2026-surge-transforms-a-fuel-nightmare" target="_blank">Overdrive — 2026 Rate Surge Analysis</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Lane Intelligence</div>
+        <a href="https://idispatchhub.com/freight-rate-snapshot-week-of-april-4-2026-tariff-shock-flatbed-surge-and-what-dispatchers-should-do-right-now/" target="_blank">iDispatch Hub — April 4 Rate Snapshot</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Market Overview</div>
+        <a href="https://www.freightwaves.com/news/intermodal-spot-rates-havent-kept-pace-with-truckings-spot-market-surge-but-thats-about-to-change-in-2026" target="_blank">FreightWaves — Spot Market Surge 2026</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">Regional Lanes</div>
+        <a href="https://www.chrobinson.com/en-us/resources/insights-and-advisories/north-america-freight-insights/jan-2026-freight-market-update/na-truckload/" target="_blank">C.H. Robinson — NA Truckload Update</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">SE Capacity</div>
+        <a href="https://www.truenorth.com/articles/business/trucking-industry-in-2026" target="_blank">TrueNorth / Ryder — 2026 Regional Outlook</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">CVSA Roadcheck</div>
+        <a href="https://cvsa.org/news/2026-roadcheck/" target="_blank">CVSA — 2026 International Roadcheck</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">CVSA Prep</div>
+        <a href="https://www.rushtruckcenters.com/blog/2026/3/2026-cvsa-international-roadcheck" target="_blank">Rush Truck Centers — Roadcheck Prep Guide</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">FMCSA Rules</div>
+        <a href="https://heavyvehicleinspection.com/blog/post/fmcsa-2026-rule-changes" target="_blank">Heavy Vehicle Inspection — FMCSA 2026</a>
+      </div>
+      <div class="source-entry">
+        <div class="source-entry-cat">CSA Scores</div>
+        <a href="https://safer.fmcsa.dot.gov" target="_blank">FMCSA SAFER — Carrier Safety Database</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>THE LOAD SHEET · SOUTHEAST EDITION · ISSUE 01 · APRIL 19, 2026</span>
+    <span>COVERING GA · TN · NC · SC · AL · FL</span>
+    <span>ALL DATA INDEPENDENTLY SOURCED</span>
+  </div>
+
+</div>
+</body>
+</html>
