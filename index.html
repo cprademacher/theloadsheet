@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Load Sheet — Southeast Edition | Freight Intelligence for Independent Operators</title>
-<meta name="description" content="Weekly freight intelligence for Southeast carriers running 1–20 trucks. Lane rates, diesel math, regulatory alerts, and actionable ops tips every Thursday at 7am.">
+<meta name="description" content="Weekly freight intelligence for Southeast carriers running 1–20 trucks. Lane rates, diesel math, regulatory alerts, and actionable ops tips every Monday at 6am.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500;600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -860,7 +860,7 @@ footer {
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">The Load <span>Sheet</span> <span class="nav-badge">Southeast</span></a>
-    <a href="#pricing" class="nav-cta">Get Access</a>
+    <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="nav-cta">Get Access</a>
   </div>
 </nav>
 
@@ -869,20 +869,20 @@ footer {
   <div class="container">
     <div class="hero-eyebrow fade-up delay-1">
       <span class="live-dot"></span>
-      Published every Thursday at 7am · GA · TN · NC · SC · AL · FL
+      Published every Monday at 6am · GA · TN · NC · SC · AL · FL
     </div>
     <h1 class="fade-up delay-2">
       Stop Flying Blind
       <em>On Your Lanes.</em>
     </h1>
     <p class="hero-sub fade-up delay-3">
-      Weekly freight intelligence built for <strong>Southeast operators running 1–20 trucks.</strong> Lane rates, diesel math, regulatory alerts, and the one thing to watch — every Thursday before you roll.
+      Weekly freight intelligence built for <strong>Southeast operators running 1–20 trucks.</strong> Lane rates, diesel math, regulatory alerts, and the one thing to watch — every Monday at 6am — before the week starts.
     </p>
     <div class="hero-actions fade-up delay-4">
-      <a href="#pricing" class="btn-primary">Start Free Trial →</a>
-      <a href="issues/southeast-001.html" class="btn-secondary">Read This Week's Issue</a>
+      <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="btn-primary">Subscribe Now →</a>
+      <a href="#sample-signup" class="btn-secondary">Get a Free Sample Issue</a>
     </div>
-    <p class="hero-note fade-up delay-5">Free issue before your card is charged. Cancel anytime.</p>
+    <p class="hero-note fade-up delay-5">No free tier — but drop your email below to get a past issue free.</p>
   </div>
 </section>
 
@@ -929,7 +929,7 @@ footer {
       <div class="problem-card">
         <span class="problem-card-icon">Problem 02</span>
         <h3>Industry news is written for enterprise</h3>
-        <p>FreightWaves, Overdrive, Transport Topics — they cover the industry at 30,000 feet. A J.B. Hunt contract trend doesn't tell you what to do with your trucks Thursday.</p>
+        <p>FreightWaves, Overdrive, Transport Topics — they cover the industry at 30,000 feet. A J.B. Hunt contract trend doesn't tell you what to do with your trucks on Monday.</p>
       </div>
       <div class="problem-card">
         <span class="problem-card-icon">Problem 03</span>
@@ -949,7 +949,7 @@ footer {
 <section>
   <div class="container">
     <p class="section-label">What's Inside</p>
-    <h2 class="section-title">Five Sections. Every Thursday. No Filler.</h2>
+    <h2 class="section-title">Five Sections. Every Monday at 6am. No Filler.</h2>
     <p class="section-body">Each issue is built around one question: what does a Southeast operator with 3–15 trucks need to know and do this week?</p>
     <div class="inside-grid">
       <div class="inside-card">
@@ -989,9 +989,9 @@ footer {
 <!-- PREVIEW -->
 <section class="preview-section">
   <div class="container">
-    <p class="section-label">Sample Issue</p>
-    <h2 class="section-title">See Exactly What You're Getting</h2>
-    <p class="section-body">This week's Southeast edition is free to read. No email required. See the data, the format, and decide if it's worth $99/month before you spend a dollar.</p>
+    <p class="section-label">Free Sample Issue</p>
+    <h2 class="section-title">See What's Inside — Get a Past Issue Free</h2>
+    <p class="section-body">Drop your email and we'll send you Issue #1 — a real past issue, the full thing. See the data, the format, the lane intel. Decide if it's worth $99/month before your card is ever involved.</p>
     <div class="preview-frame">
       <div class="preview-bar">
         <div class="preview-dots">
@@ -1047,9 +1047,12 @@ footer {
           </div>
         </div>
       </div>
-      <div class="preview-cta-bar">
-        <span class="preview-cta-text">Issue 01 · April 19, 2026 · Southeast Edition</span>
-        <a href="issues/southeast-001.html" class="btn-primary" style="font-size:10px;padding:8px 16px;">Read Full Issue →</a>
+      <div class="preview-cta-bar" id="sample-signup">
+        <span class="preview-cta-text">Sample shown above — full issue delivered by email</span>
+        <form style="display:flex;gap:0;" onsubmit="handleSampleRequest(event)">
+          <input type="email" id="sample-email" placeholder="your@email.com" required style="background:var(--surface3);border:1px solid var(--border2);border-right:none;padding:8px 12px;font-family:'Source Code Pro',monospace;font-size:11px;color:var(--text);outline:none;width:200px;">
+          <button type="submit" id="sample-btn" style="background:var(--accent);border:none;color:#fff;padding:8px 14px;font-family:'Source Code Pro',monospace;font-size:10px;letter-spacing:1px;cursor:pointer;text-transform:uppercase;white-space:nowrap;">Send Me Issue #1 →</button>
+        </form>
       </div>
     </div>
   </div>
@@ -1141,13 +1144,13 @@ footer {
           <p class="pricing-sub">Cancel anytime · no commitment</p>
         </div>
         <div class="pricing-features">
-          <div class="pricing-feature"><span class="chk">✓</span> Weekly Southeast edition every Thursday 7am</div>
+          <div class="pricing-feature"><span class="chk">✓</span> Weekly Southeast edition every Monday at 6am</div>
           <div class="pricing-feature"><span class="chk">✓</span> All 5 sections: rates, lanes, regulatory, ops, signals</div>
           <div class="pricing-feature"><span class="chk">✓</span> Full source citations on every data point</div>
           <div class="pricing-feature"><span class="chk">✓</span> Web + email delivery</div>
           <div class="pricing-feature"><span class="chk">✓</span> One subscriber login</div>
         </div>
-        <a href="#signup" class="pricing-btn pricing-btn-secondary">Get Started</a>
+        <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="pricing-btn pricing-btn-secondary">Subscribe Now</a>
       </div>
 
       <div class="pricing-card featured">
@@ -1166,7 +1169,7 @@ footer {
           <div class="pricing-feature"><span class="chk">✓</span> $10/month savings vs. month-to-month</div>
           <div class="pricing-feature"><span class="chk">✓</span> One subscriber login</div>
         </div>
-        <a href="#signup" class="pricing-btn pricing-btn-primary">Get Started →</a>
+        <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="pricing-btn pricing-btn-primary">Subscribe Now →</a>
       </div>
 
       <div class="pricing-card">
@@ -1184,12 +1187,12 @@ footer {
           <div class="pricing-feature"><span class="chk">✓</span> One invoice, one payment — no per-seat billing</div>
           <div class="pricing-feature"><span class="chk">✓</span> As low as $10/person/month for a 15-truck fleet</div>
         </div>
-        <a href="#signup" class="pricing-btn pricing-btn-secondary">Get Started</a>
+        <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="pricing-btn pricing-btn-secondary">Subscribe Now</a>
       </div>
 
     </div>
     <div class="pricing-value-note">
-      <p><strong>Free issue guarantee:</strong> Read your first full issue before your card is ever charged. If it doesn't give you something actionable in the first 8 minutes, don't subscribe. We'd rather earn your $99 than take it.</p>
+      <p><strong>No free tier.</strong> The Load Sheet is a paid product — because free newsletters don't fund 8 hours of research. But we'll send you one past issue free when you share your email, so you can decide if it's worth $99/month before your card is ever involved.</p>
     </div>
   </div>
 </section>
@@ -1215,7 +1218,7 @@ footer {
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a">
-          <div class="faq-a-inner">Every Thursday at 7am. Operators start early. The issue lands before the week's key decisions need to be made, and the web version is always available at a permanent link if you want to reference it later in the week.</div>
+          <div class="faq-a-inner">Every Monday at 6am. Operators start early. The issue lands before the week's key decisions need to be made, and the web version is always available at a permanent link if you want to reference it later in the week.</div>
         </div>
       </div>
       <div class="faq-item">
@@ -1262,12 +1265,11 @@ footer {
 <div class="final-cta" id="signup">
   <div class="container">
     <h2>Ready to Know What's Actually Moving?</h2>
-    <p>Join Southeast operators who read The Load Sheet every Thursday. First issue is on us.</p>
-    <form class="email-form" onsubmit="handleSignup(event)">
-      <input type="email" class="email-input" placeholder="your@email.com" required id="signup-email">
-      <button type="submit" class="email-submit">Get Free Issue →</button>
-    </form>
-    <p class="form-note">No credit card for the free issue. Unsubscribe anytime.</p>
+    <p>Subscribe and get every Monday's issue at 6am — lane rates, diesel math, regulatory alerts, and the one thing to watch before your week starts.</p>
+    <div style="position:relative;">
+      <a href="YOUR_BEEHIIV_SUBSCRIBE_URL" class="btn-primary" style="font-size:13px;padding:16px 36px;letter-spacing:2px;">Subscribe Now — From $89/month →</a>
+    </div>
+    <p class="form-note">Solo from $89/month · Fleet Pass $149/month · Cancel Solo anytime</p>
   </div>
 </div>
 
@@ -1276,7 +1278,7 @@ footer {
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">The Load <span>Sheet</span></div>
-      <div class="footer-text">Southeast Edition · GA · TN · NC · SC · AL · FL · Published every Thursday</div>
+      <div class="footer-text">Southeast Edition · GA · TN · NC · SC · AL · FL · Published every Monday at 6am</div>
       <div class="footer-text">© 2026 The Load Sheet · All data independently sourced</div>
     </div>
   </div>
@@ -1290,15 +1292,15 @@ function toggleFaq(btn) {
   if (!isOpen) item.classList.add('open');
 }
 
-function handleSignup(e) {
+function handleSampleRequest(e) {
   e.preventDefault();
-  const email = document.getElementById('signup-email').value;
-  const btn = e.target.querySelector('button');
+  const btn = document.getElementById('sample-btn');
   btn.textContent = 'Check Your Inbox ✓';
   btn.style.background = '#3dba6a';
   btn.disabled = true;
-  // Replace with your actual Beehiiv signup URL
-  // window.location.href = 'https://your-beehiiv-signup-url?email=' + encodeURIComponent(email);
+  // Connect to your Beehiiv free subscriber signup URL:
+  // const email = document.getElementById('sample-email').value;
+  // window.location.href = 'https://your-beehiiv-free-signup-url?email=' + encodeURIComponent(email);
 }
 </script>
 
